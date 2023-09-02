@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="images/hangman.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="hangman.css" />
+
+    <title>Hangman</title>
+</head>
+
+<body>
+    <div class="caution">
+        *Playing on mobile won't be a better experience
+    </div>
+    <div class="header">
+        <img id="hangman" src="images/0.png" alt="" />
+        <div class="title-cont">
+            <h1 class="title">Hangman
+
+            </h1>
+            <h3 class="sub-title">
+                Guess the word <br />(or it could be the name of a
+                programming language)
+
+                <p id="name"></p>
+
+            </h3>
+            <h1>
+                <p style="color: wheat;" id="blank"></p>
+            </h1>
+        </div>
+
+    </div>
+    <div class="main">
+        <div class="inner-main"></div>
+    </div>
+
+    <div class="tries-cont">
+        <p class="tries"></p>
+    </div>
+
+    <div class="keyboard">
+        <button onclick="select('a')" class="keyboard-btn">
+            <i>a</i>
+        </button>
+        <button onclick="select('b')" class="keyboard-btn">
+            <i>b</i>
+        </button>
+        <button onclick="select('c')" class="keyboard-btn">
+            <i>c</i>
+        </button>
+        <button onclick="select('d')" class="keyboard-btn">
+            <i>d</i>
+        </button>
+        <button onclick="select('e')" class="keyboard-btn">
+            <i>e</i>
+        </button>
+        <button onclick="select('f')" class="keyboard-btn">
+            <i>f</i>
+        </button>
+        <button onclick="select('g')" class="keyboard-btn">
+            <i>g</i>
+        </button>
+        <button onclick="select('h')" class="keyboard-btn">
+            <i>h</i>
+        </button>
+        <button onclick="select('i')" class="keyboard-btn">
+            <i>i</i>
+        </button>
+        <button onclick="select('j')" class="keyboard-btn">
+            <i>j</i>
+        </button>
+        <button onclick="select('k')" class="keyboard-btn">
+            <i>k</i>
+        </button>
+        <button onclick="select('l')" class="keyboard-btn">
+            <i>l</i>
+        </button>
+        <button onclick="select('m')" class="keyboard-btn">
+            <i>m</i>
+        </button>
+        <button onclick="select('n')" class="keyboard-btn">
+            <i>n</i>
+        </button>
+        <button onclick="select('o')" class="keyboard-btn">
+            <i>o</i>
+        </button>
+        <button onclick="select('p')" class="keyboard-btn">
+            <i>p</i>
+        </button>
+        <button onclick="select('q')" class="keyboard-btn">
+            <i>q</i>
+        </button>
+        <button onclick="select('r')" class="keyboard-btn">
+            <i>r</i>
+        </button>
+        <button onclick="select('s')" class="keyboard-btn">
+            <i>s</i>
+        </button>
+        <button onclick="select('t')" class="keyboard-btn">
+            <i>t</i>
+        </button>
+        <button onclick="select('u')" class="keyboard-btn">
+            <i>u</i>
+        </button>
+        <button onclick="select('v')" class="keyboard-btn">
+            <i>v</i>
+        </button>
+        <button onclick="select('w')" class="keyboard-btn">
+            <i>w</i>
+        </button>
+        <button onclick="select('x')" class="keyboard-btn">
+            <i>x</i>
+        </button>
+        <button onclick="select('y')" class="keyboard-btn">
+            <i>y</i>
+        </button>
+        <button onclick="select('z')" class="keyboard-btn">
+            <i>z</i>
+        </button>
+    </div>
+
+    <div class="start">
+        <button type="button" id="start" onclick="resetAll()" class="start-button">
+            <i id="start-game">Again Game</i>
+        </button>
+
+    </div>
+
+    <!-- Modals -->
+    <!-- Hint Modal -->
+    <dialog class="modal modal-hint" id="modal-hint">
+        <h3>Taking a hint costs 2 tries</h3>
+        <p>Are you sure to make the trade?🤔</p>
+        <div class="hint-btn">
+            <button id="close-hint">
+                Nah🙄, I'll figure it out myself
+            </button>
+            <button class="close-button" id="take-hint">Yeah sure😇</button>
+        </div>
+    </dialog>
+    <!-- Not enough tries modal -->
+    <dialog class="modal" id="modal-tries0">
+        <h3>You don't have enough tries left😞</h3>
+    </dialog>
+
+    <!-- Win Modal -->
+    <dialog class="modal modal-win" id="modal-win">
+        <h3>Congratulations, You won the game🤩</h3>
+    </dialog>
+
+    <!-- Lose Modal -->
+    <dialog class="modal" id="modal-lose">
+        <h3>Unfortunately, You lost the game 🤕</h3>
+        <p id="secret-word">Secret word was</p>
+    </dialog>
+
+
+    <script src="hangman.js"></script>
+</body>
+
+</html>
